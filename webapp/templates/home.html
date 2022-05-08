@@ -4,38 +4,19 @@
         <div class="tagline">
             <p>Retell your story...<br/>restore your images</p>
         </div> 
+        <div class="dropzone">
+            <div class="dz-message needsclick">
+             <span class="glyphicon glyphicon-cloud-upload"></span>
+            </div>
+        </div>
+        <script>
+           $(".dropzone").dropzone({
+             url: '/upload',
+             maxFiles: 0,
+             progressBarWidth: '100%',
+           });
+        </script> 
 
-        <form method="POST" action="" enctype="multipart/form-data">
-            {{ form.hidden_tag() }}
-            <fieldset class="form-group">
-                {% if image_file %}
-                    <img src="{{ image_file }}">
-                {% endif %}                
-                
-                    <!-- Upload Image -->
-                    <div class="frame">
-                        <div class="center">
-                            <div class="title">
-                                <h1 class="upload-h1">Upload Image</h1>
-                            </div>
-
-                            <div class="dropzone">
-                                <span class="glyphicon glyphicon-cloud-upload"></span>
-                                <input type="file" class="upload-input" />
-                            </div>
-
-                            <div class="form-group">
-                                {{ form.picture(class="form-control-file") }}
-                            </div>
-
-                        </div>
-                    </div>
-                
-                   
-                <div class="form-group restore-image-btn">
-                    {{ form.submit(class="btn btn-outline-info") }}
-                </div>
-            </fieldset>
-        </form>
+       
     </div>
 {% endblock content %}

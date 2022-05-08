@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="content-section">
+    <div class="container">
+        <div class="card-group">
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="card col-md-4">
+                    <div class="card-body">
+                        <h3 class="card-title">Original Image</h3>
+                    </div>
+                    <img src="{{ image_file }}" class="card-img-top">
+                    
+                </div>
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <button class="btn col-md-4 download-btn">Restore Image</button>
+        </div>
+</div>
+</div>
+
+
+{% endblock content %}
